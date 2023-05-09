@@ -6,6 +6,7 @@ class OwnersController < ApplicationController
 
   def create
     @owner = Owner.new(owner_params)
+    debugger
 
     if @owner.save
       render json: @owner, status: :created
@@ -57,7 +58,7 @@ class OwnersController < ApplicationController
   private
 
   def owner_params
-    params.permit(:name, :email)
+    params.require(:owner).permit(:name, :email)
   end
 
 end

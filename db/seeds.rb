@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+owner_1 = Owner.create!(
+    name: "John Doe",
+    email: "hi@tony.com"
+)
+
+pet_1 = Pet.create!(
+    name: "Buddy",
+    species: "Dog",
+    breed: "Golden Retriever",
+    age: 3,
+    owner_id: owner_1.id,
+)
+
+
+puts "Created #{Owner.count} owners"
+puts "Created #{Pet.count} pets"
+
